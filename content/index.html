@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>KSP Checklist Generator</title>
+
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="kspchecklist.js"></script>
+<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+<link href="bs/css/bootstrap.css" rel="stylesheet">
+<link href="bs/css/bootstrap-responsive.css" rel="stylesheet">
+<style type="text/css">
+.fieldset-auto-width {
+	margin: auto;
+	text-align: left;
+}
+
+.main_content {
+	margin: auto;
+	width: 40%;
+	text-align: center;
+}
+
+.center_button {
+	margin: auto;
+}
+
+table {
+	margin: auto;
+}
+</style>
+
+</head>
+
+
+<body>
+	<noscript>
+		<div
+			style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+			Your web browser must have JavaScript enabled in order for this
+			application to display correctly.</div>
+	</noscript>
+
+	<div class="main_content">
+		<form id="mission_form">
+
+			<fieldset class="fieldset-auto-width">
+				<legend>Please select your mission targets</legend>
+
+				<div>
+					<input type="checkbox" style="color: red;" name="LANDING_ATMO"
+						id="LANDING_ATMO"> <label for="LANDING_ATMO">Atmospheric
+						landing</label>
+				</div>
+				<div>
+					<input type="checkbox" style="color: red;" name="LANDING"
+						id="LANDING"> <label for="LANDING">Landing</label>
+				</div>
+				<div>
+					<input type="checkbox" style="color: red;" name="KETHANE_MINING"
+						id="KETHANE_MINING"> <label for="KETHANE_MINING">Kethane
+						mining</label>
+				</div>
+				<div>
+					<input type="checkbox" style="color: red;" name="SCIENCING"
+						id="SCIENCING"> <label for="SCIENCING">Sciencing</label>
+				</div>
+				<div>
+					<input type="checkbox" style="color: red;" name="REMOTE_TECHING"
+						id="REMOTE_TECHING"> <label for="REMOTE_TECHING">Remote
+						teching</label>
+				</div>
+				<div>
+					<input type="checkbox" style="color: red;" name="DOCKING"
+						id="DOCKING"> <label for="DOCKING">Docking</label>
+				</div>
+			</fieldset>
+		</form>
+
+		<button class="center_button btn btn-primary" id="create_button" type="submit"
+			name="create" value="Create checklist">Create</button>
+
+		<h4>Checklist</h4>
+
+		<div id="checklist"></div>
+	</div>
+</body>
+</html>
