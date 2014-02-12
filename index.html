@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>KSP Checklist Generator</title>
+
+<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="kspchecklist.js"></script>
+<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+<link href="bs/css/bootstrap.css" rel="stylesheet">
+<link href="bs/css/bootstrap-responsive.css" rel="stylesheet">
+<style type="text/css">
+.fieldset-auto-width {
+	margin: auto;
+	text-align: left;
+}
+
+.left_content {
+	margin: auto;
+	width: 20%;
+	text-align: center;
+	float: left;
+}
+
+.content {
+	margin: 50pt;
+}
+
+.center_button {
+	margin: auto;
+}
+
+table {
+	margin: auto;
+}
+
+#checklist {
+	float: left;
+	padding-right: 100pt;
+	margin: auto;
+	width: 60%;
+}
+
+#checklist .control-group {
+	float: left;
+	padding: 15pt;
+}
+</style>
+
+</head>
+
+
+<body>
+	<noscript>
+		<div
+			style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+			Your web browser must have JavaScript enabled in order for this
+			application to display correctly.</div>
+	</noscript>
+
+	<div class="content">
+	
+		<div class="left_content">
+			<form id="mission_form">
+				<div class="control-group">
+					<fieldset class="fieldset-auto-width">
+						<legend>Please select your mission targets</legend>
+	
+						<div class="controls">
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="LANDING"/>
+								Landing
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="KETHANE_MINING"/>
+								Kethane mining
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="SCIENCING"/>
+								Sciencing
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="REMOTE_TECHING"/>
+								Remote teching
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="DOCKING"/>
+								Docking
+							</label>
+						</div>
+					</fieldset>
+				</div>
+			</form>
+	
+			<button class="center_button btn btn-primary" id="create_button"
+				type="submit" name="create" value="Create checklist">Create</button>
+		</div>
+	
+	
+		<div id="checklist"></div>
+	</div>
+	
+</body>
+</html>
