@@ -13,9 +13,8 @@ $(function()  {
 		var div = $("#checklist");
 		div.empty();
 		
-		var id = 1;
-		
 		for(var i in groups) {
+			var divc = $('<div></div>').addClass("control-group");
 			var fieldset = $('<fieldset></fieldset>').addClass('fieldset-auto-width');
 			var legend = $('<legend></legend>');
 			
@@ -23,13 +22,12 @@ $(function()  {
 			fieldset.append(legend);
 			
 			for(var n in groups[i].items) {
-				var dynlabel = "dyn_label_ " + (id++);
-				fieldset.append("<div><input type=\"checkbox\" style=\"color: red;\"" +
-						"id=\"" + dynlabel + "\"><label for=\"" + dynlabel + "\">" + 
-						groups[i].items[n] + "</label></div>");
+				fieldset.append("<label class=\"checkbox\">" + 
+						"<input type=\"checkbox\" style=\"color: red;\">" +
+						groups[i].items[n] + "</label>");
 			}
-			
-			div.append(fieldset);
+			divc.append(fieldset);
+			div.append(divc);
 		}
 	});
 });
@@ -44,12 +42,11 @@ createCheckList = function(values) {
 		var g = new Group("(undefined)");
 		
 		switch(name) {
-		case "LANDING_ATMO":
-			g.add("Parachutes");
 		case "LANDING":
 			g.name = "(Atmospheric) landing";
+			g.add("Parachutes (atmospheric)");
 			g.add("Legs (long enough)");
-			g.add("Ladder for EVA (if needed");
+			g.add("Ladder for EVA (if needed)");
 			break;
 			
 		case "ORBITING":

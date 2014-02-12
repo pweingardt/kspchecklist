@@ -13,10 +13,15 @@
 	text-align: left;
 }
 
-.main_content {
+.left_content {
 	margin: auto;
-	width: 40%;
+	width: 20%;
 	text-align: center;
+	float: left;
+}
+
+.content {
+	margin: 50pt;
 }
 
 .center_button {
@@ -25,6 +30,18 @@
 
 table {
 	margin: auto;
+}
+
+#checklist {
+	float: left;
+	padding-right: 100pt;
+	margin: auto;
+	width: 60%;
+}
+
+#checklist .control-group {
+	float: left;
+	padding: 15pt;
 }
 </style>
 
@@ -39,48 +56,52 @@ table {
 			application to display correctly.</div>
 	</noscript>
 
-	<div class="main_content">
-		<form id="mission_form">
-
-			<fieldset class="fieldset-auto-width">
-				<legend>Please select your mission targets</legend>
-
-				<div>
-					<input type="checkbox" style="color: red;" name="LANDING_ATMO"
-						id="LANDING_ATMO"> <label for="LANDING_ATMO">Atmospheric
-						landing</label>
+	<div class="content">
+	
+		<div class="left_content">
+			<form id="mission_form">
+				<div class="control-group">
+					<fieldset class="fieldset-auto-width">
+						<legend>Please select your mission targets</legend>
+	
+						<div class="controls">
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="LANDING"/>
+								Landing
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="KETHANE_MINING"/>
+								Kethane mining
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="SCIENCING"/>
+								Sciencing
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="REMOTE_TECHING"/>
+								Remote teching
+							</label>
+							
+							<label class="checkbox">
+								<input type="checkbox" style="color: red;" name="DOCKING"/>
+								Docking
+							</label>
+						</div>
+					</fieldset>
 				</div>
-				<div>
-					<input type="checkbox" style="color: red;" name="LANDING"
-						id="LANDING"> <label for="LANDING">Landing</label>
-				</div>
-				<div>
-					<input type="checkbox" style="color: red;" name="KETHANE_MINING"
-						id="KETHANE_MINING"> <label for="KETHANE_MINING">Kethane
-						mining</label>
-				</div>
-				<div>
-					<input type="checkbox" style="color: red;" name="SCIENCING"
-						id="SCIENCING"> <label for="SCIENCING">Sciencing</label>
-				</div>
-				<div>
-					<input type="checkbox" style="color: red;" name="REMOTE_TECHING"
-						id="REMOTE_TECHING"> <label for="REMOTE_TECHING">Remote
-						teching</label>
-				</div>
-				<div>
-					<input type="checkbox" style="color: red;" name="DOCKING"
-						id="DOCKING"> <label for="DOCKING">Docking</label>
-				</div>
-			</fieldset>
-		</form>
-
-		<button class="center_button btn btn-primary" id="create_button" type="submit"
-			name="create" value="Create checklist">Create</button>
-
-		<h4>Checklist</h4>
-
+			</form>
+	
+			<button class="center_button btn btn-primary" id="create_button"
+				type="submit" name="create" value="Create checklist">Create</button>
+		</div>
+	
+	
 		<div id="checklist"></div>
 	</div>
+	
 </body>
 </html>
