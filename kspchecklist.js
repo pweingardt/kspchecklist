@@ -44,6 +44,7 @@ createCheckList = function(values) {
 		switch(name) {
 		case "LANDING":
 			g.name = "(Atmospheric) landing";
+			g.add("Dragchutes (atmospheric)");
 			g.add("Parachutes (atmospheric)");
 			g.add("Legs (long enough)");
 			g.add("Ladder for EVA (if needed)");
@@ -58,20 +59,22 @@ createCheckList = function(values) {
 			g.add("Kethane container");
 			g.add("Kethane converter");
 			g.add("Kethane mining drill");
+			g.add("Kethane scanner");
 			break;
 			
 		case "SCIENCING":
 			g.name = "Sciencing";
 			g.add("Communication link to Kerbin");
 			
-			g.add("Gravimeter");
-			g.add("Thermometer");
-			g.add("Barometer");
-			g.add("Seismograph");
+			g.add("Gravman Negative Gravioli Detector");
+			g.add("2HOT Thermometer");
+			g.add("PresMat Barometer");
+			g.add("Double-C Seismic Accelerometer");
 			
-			g.add("Materials study");
-			g.add("Science Lab");
-			g.add("Atmospheric study nose cone");
+			g.add("SC-9001 Science Junior");
+			g.add("Mystery Goo Containment Unit");
+			g.add("Mobile processing Lab MPL-LG-2");
+			g.add("Sensor array computing nose cone");
 			break;
 			
 		case "REMOTE_TECHING":
