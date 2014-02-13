@@ -78,6 +78,10 @@ updateUserGroups = function() {
 		userGroups = JSON.parse(localStorage.getItem("usergroups"));
 	}
 	
+	if(userGroups == null) {
+		userGroups = new Array();
+	}
+	
 	$("#user_groups").empty();
 	
 	for(var i in userGroups) {
