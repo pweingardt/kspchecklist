@@ -5,7 +5,9 @@
 	<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
 	<script type="text/javascript" src="jquery.leanModal.min.js"></script>
 	<script type="text/javascript" src="kspchecklist.js"></script>
+	<script type="text/javascript" src="checkgroups.js"></script>
 	<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
 	<link href="bs/css/bootstrap.css" rel="stylesheet">
 	<link href="bs/css/bootstrap-responsive.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="holo/holo-base-elements.css" />
@@ -89,12 +91,12 @@
 					<a class="modal_close" href="#"></a>
 				</div>
 
-				<form class="form-horizontal" style="padding-top: 10px;">
+				<form class="form-horizontal" style="padding-top: 10px;" id="create_form">
 					<div class="form-group">
 						<label for="input_group_name" class="col-sm-4 control-label">Name</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="input_group_name"
-								placeholder="Checkgroup name">
+								placeholder="Checkgroup name" name="group_name">
 						</div>
 					</div>
 

@@ -132,3 +132,7 @@ a.edit {
 .btn_full {
 	width: 100%;
 }
+
+div small.error {
+  color: #B94A48;
+}
