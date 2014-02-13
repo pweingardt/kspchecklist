@@ -1,64 +1,19 @@
 <html>
 <head>
-<title>KSP Checklist Generator</title>
-
-<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="kspchecklist.js"></script>
-<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
-<link href="bs/css/bootstrap.css" rel="stylesheet">
-<link href="bs/css/bootstrap-responsive.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="holo/holo-base-elements.css" />
-<link rel="stylesheet" type="text/css" href="holo/holo-light-elements.css" />
-<link rel="stylesheet" type="text/css" href="holo/holo-base-widgets.css" />
-<link rel="stylesheet" type="text/css" href="holo/holo-light-widgets.css" />
-<style type="text/css">
-
-label {
-	vertical-align: sub;
-}
-
-.fieldset-auto-width {
-	margin: auto;
-	text-align: left;
-}
-
-.left_content {
-	margin: auto;
-	width: 20%;
-	text-align: center;
-	float: left;
-}
-
-.content {
-	margin: 50pt;
-}
-
-.center_button {
-	margin: auto;
-}
-
-table {
-	margin: auto;
-}
-
-#checklist {
-	float: left;
-	margin: auto;
-	width: 75%;
-}
-
-#checklist .control-group {
-	float: left;
-	padding: 15pt;
-}
-
-label.checkbox {
-	line-height: 40px;
-}
-</style>
-
+	<title>KSP Checklist Generator</title>
+	
+	<script type="text/javascript" src="jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="jquery.leanModal.min.js"></script>
+	<script type="text/javascript" src="kspchecklist.js"></script>
+	<script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
+	<link href="bs/css/bootstrap.css" rel="stylesheet">
+	<link href="bs/css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="holo/holo-base-elements.css" />
+	<link rel="stylesheet" type="text/css" href="holo/holo-light-elements.css" />
+	<link rel="stylesheet" type="text/css" href="holo/holo-base-widgets.css" />
+	<link rel="stylesheet" type="text/css" href="holo/holo-light-widgets.css" />
+	<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
-
 
 <body>
 	<noscript>
@@ -71,46 +26,90 @@ label.checkbox {
 	<div class="content">
 	
 		<div class="left_content">
-			<form id="mission_form">
-				<div class="control-group">
-					<fieldset class="fieldset-auto-width">
-						<legend>Please select your mission targets</legend>
-	
-						<div class="controls">
-							
-							<label class="checkbox">
-								<input type="checkbox" style="color: red;" name="LANDING"/>Landing</label>
-							
-							<label class="checkbox">
-								<input type="checkbox" style="color: red;" name="KETHANE_MINING"/>
-								Kethane mining
-							</label>
-							
-							<label class="checkbox">
-								<input type="checkbox" style="color: red;" name="SCIENCING"/>
-								Sciencing
-							</label>
-							
-							<label class="checkbox">
-								<input type="checkbox" style="color: red;" name="REMOTE_TECHING"/>
-								Remote teching
-							</label>
-							
-							<label class="checkbox">
-								<input type="checkbox" style="color: red;" name="DOCKING"/>
-								Docking
-							</label>
-						</div>
-					</fieldset>
-				</div>
-			</form>
-	
-			<button class="center_button btn btn-primary" id="create_button"
-				type="submit" name="create" value="Create checklist">Create</button>
+			<div class="control-group">
+				<fieldset class="fieldset-auto-width">
+					<legend>Please select your mission targets</legend>
+
+					<div class="controls">
+						
+						<label class="checkbox">
+							<input class="checkgroup" type="checkbox" name="LANDING"/>Landing</label>
+						
+						<label class="checkbox">
+							<input class="checkgroup" type="checkbox" name="KETHANE_MINING"/>
+							Kethane mining
+						</label>
+						
+						<label class="checkbox">
+							<input class="checkgroup" type="checkbox" name="SCIENCING"/>
+							Sciencing
+						</label>
+						
+						<label class="checkbox">
+							<input class="checkgroup" type="checkbox" name="REMOTE_TECHING"/>
+							Remote teching
+						</label>
+						
+						<label class="checkbox">
+							<input class="checkgroup" type="checkbox" name="DOCKING"/>
+							Docking
+						</label>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="control-group" style="padding-top: 10pt">
+				<fieldset class="fieldset-auto-width">
+					<legend>Your check groups</legend>
+					
+					<div class="controls" id="user_groups">
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="control-group">
+				<button class="center_button btn btn-primary" id="create_button"
+						type="submit" name="create" value="Create checklist">Generate
+						Checklist</button>
+
+				<button class="center_button btn" id="create_check_group"
+						type="button" value="Create Checkgroup">Create new Group</button>
+			</div>
+
+			<a style="display: none;" id="btn_create_check_group" rel="leanModal" href="#edit">Test</a>
 		</div>
 	
 	
 		<div id="checklist"></div>
+
+		<div id="edit">
+			<div id="edit_ct">
+				<div id="edit_header">
+					<h3>Create a check group</h3>
+					<a class="modal_close" href="#"></a>
+				</div>
+
+				<form class="form-horizontal" style="padding-top: 10px;">
+					<div class="form-group">
+						<label for="input_group_name" class="col-sm-4 control-label">Name</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="input_group_name"
+								placeholder="Checkgroup name">
+						</div>
+					</div>
+
+					<div id="group_items"></div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-4 col-sm-8">
+							<button type="button" class="btn btn-default" id="add_item">Add item</button>
+							<button type="button" class="btn btn-primary" id="create_done">Create / Edit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="lean_overlay" style="display: none; opacity: 0.5;"></div>
 	</div>
 	
 </body>
