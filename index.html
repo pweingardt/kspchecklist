@@ -7,7 +7,15 @@
 <script type="text/javascript" src="bs/js/bootstrap.min.js"></script>
 <link href="bs/css/bootstrap.css" rel="stylesheet">
 <link href="bs/css/bootstrap-responsive.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="holo/holo-base-elements.css" />
+<link rel="stylesheet" type="text/css" href="holo/holo-light-elements.css" />
+<link rel="stylesheet" type="text/css" href="holo/holo-base-widgets.css" />
+<link rel="stylesheet" type="text/css" href="holo/holo-light-widgets.css" />
 <style type="text/css">
+
+label {
+	vertical-align: sub;
+}
 
 .fieldset-auto-width {
 	margin: auto;
@@ -43,6 +51,10 @@ table {
 	float: left;
 	padding: 15pt;
 }
+
+label.checkbox {
+	line-height: 40px;
+}
 </style>
 
 </head>
@@ -67,9 +79,7 @@ table {
 						<div class="controls">
 							
 							<label class="checkbox">
-								<input type="checkbox" style="color: red;" name="LANDING"/>
-								Landing
-							</label>
+								<input type="checkbox" style="color: red;" name="LANDING"/>Landing</label>
 							
 							<label class="checkbox">
 								<input type="checkbox" style="color: red;" name="KETHANE_MINING"/>

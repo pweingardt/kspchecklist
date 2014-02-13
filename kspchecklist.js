@@ -107,8 +107,12 @@ createCheckList = function(values) {
 	g.add("Back-up generator");
 	groups.push(g);
 	
+	groups.sort(function(a, b) {
+		return (a.items.length < b.items.length);
+	});
+	
 	return groups;
-}
+};
 
 
 function Group(n) {
@@ -117,6 +121,6 @@ function Group(n) {
 	
 	this.add = function(name) {
 		this.items.push(name);
-	}
+	};
 	
 }
